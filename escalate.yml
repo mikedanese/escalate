@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: escalate
+  namespace: default
+spec:
+  containers:
+  - name: escalate
+    image: gcr.io/mikedanese-k8s/escalate
+    imagePullPolicy: Always
+  securityContext:
+    runAsUser: 33
+    runAsNonRoot: true
